@@ -211,3 +211,70 @@
     display: flex;
   }
   ```
+
+
+
+### visual
+
+- padding이나 margin이 들어가서 보더 영역이 늘어나는 것을 방지하기 위해
+
+  box-sizing: border-box;를 사용
+
+- absolute가 걸리도록 하기 위해서 relative를 큼직큼직한 영역에 사용
+
+- text-shadow: x y blur rgba(0,0,0,0);
+
+- 배경 이미지 어둡게 blur처리
+
+  기존에 있는 배경에 before속성을 이용해서 덮어버리는 방법
+
+  ```css
+  .section--visual::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  ----------------------------------------
+  .section--visual::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;  <---
+    right: 0;   <---
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  둘다 같은 효과
+  ```
+
+- 배경이미지가 비율이 변경되도 전체를 차지하게 설정
+
+  ```css
+  background-size: cover;
+  ```
+
+- form태그 안에 type="submit"인 버튼을 누르면 form태그안의 양식들이 action=""안의 특정한 페이지 주소로 전송된다.
+
+  ```html
+  <form id="sign-form" method="POST" action="">
+    <button type="submit"></button>
+  </form>
+  ```
+
+- 특정단어 연결
+
+  ```html
+  단어와 단어사이에 &nbsp;를 사용한다. 띄어쓰기 하지 않고 붙여써야한다.
+  ```
+
+- flex 
+
+  flex-grow: 0  flex-shrink: 1 flex-basis: auto가 기본값
+
+  flex-grow가 1이되면 flex-basis는 0이 된다.
+
