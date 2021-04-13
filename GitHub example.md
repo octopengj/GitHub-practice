@@ -128,3 +128,86 @@
 
   box-shadow는 이중 그림자가 가능하다.
 
+- inner 
+
+  가운데 정렬시 margin: 0 auto;를 사용하려면 width값이 정의되어 있어야 한다.
+
+- logo
+
+  ```html
+  <div class="menu-group">
+     <div class="logo">
+     <a href="#">GitHub</a>
+  </div>
+  ```
+
+  
+
+  ```css
+  header .logo a {
+    background: url(../img/logo.svg);
+    width: 32px;
+    height: 32px;
+    display: block;
+    text-indent: -999px;
+  }
+  ```
+
+  a 태그는 inline 요소이기 때문에 display: block;해야 한다.
+
+  html에서 img 태그로 이미지를 넣을 경구 alt가 있지만
+
+  css에서 background로 이미지를 넣을 경우 대체텍스트가 없으므로 html에 텍스트가 필요하다.
+
+  text-indent로 화면에서 보이지 않게 처리한다.
+
+- clearfix
+
+  ```css
+  /*float clearfix*/
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+  .float--left {
+    float: left;
+  }
+  .float--right {
+    float: right;
+  }
+  ```
+
+  float속성을 사용하면 부모가 제대로 감싸주지 못하는 문제가 발생한다. 이를 해결하기 위해 부모에 clearfix속성을 사용한다.
+
+- order
+
+  ```css
+  header .btn-group {
+    order: 2;
+  }
+  #search-form {
+    order: 1;
+  }
+  .sub-menu {
+      /*default :0;*/
+  }
+  
+  ```
+
+  order속성을 통해 배치순서를 바꿀 수 있다.
+
+- html에서 줄바꿈을 하면 화면상에 공간이 생긴다.
+
+  ```html
+  <div class="btn-group">
+    <a href="#" class="btn sign-in">Sign in</a>
+    <a href="#" class="btn btn--primary sign-up">Sign up</a>
+  </div>
+  ```
+
+  ```css
+  header .btn-group {
+    display: flex;
+  }
+  ```
