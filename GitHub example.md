@@ -1,4 +1,4 @@
-# cGitHub example
+# GitHub example
 
 
 
@@ -465,6 +465,8 @@ defer: html의 구조가 전부 로드되면 실행
 
 ### media
 
+#### header
+
 - 설정단위
 
   | 종류           | 디바이스         | 단위(px)    |
@@ -581,3 +583,14 @@ defer: html의 구조가 전부 로드되면 실행
 
   
 
+#### visual
+
+- 배경이미지변경
+
+  ```css
+  .section--visual {
+      background-image: url(../img/bg-small.jpg);
+    }
+  ```
+
+  
