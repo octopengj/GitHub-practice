@@ -278,3 +278,54 @@
 
   flex-grow가 1이되면 flex-basis는 0이 된다.
 
+
+
+### feature
+
+- video
+
+  화면의 비율 16:9
+
+  ```html
+  <div class="video">
+    <div class="video-ratio">
+    </div>
+  </div>
+  ```
+
+  ```css
+  video {
+    max-width: 500px;
+  }
+  video-ratio {
+      height: 0;
+      padding-top: 56.25%
+  }
+  
+  /*부모의 width값이 500px 500:x=16:9  --> 56.25%*/
+  ```
+
+  height에 값을 지정하면 고정이 되기 때문에 부모의 값에 따라 비율이 정해지도록 설정 
+
+  ```css
+  video {
+    max-width: 500px;
+  }
+  video-ratio {
+      height: 0;
+      padding-top: 56.25%
+      position: relative;
+  }
+  iframe {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  ```
+
+  video영역 안에 iframe 비디오를 삽입
+
+  
+
