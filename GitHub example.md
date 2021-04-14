@@ -426,3 +426,39 @@ defer: html의 구조가 전부 로드되면 실행
 
   flex:1; 로 Sign for GitHub 버튼 영역 잡아줌
 
+
+
+### Footer
+
+- 가운데 배치
+
+  ```css
+  footer .logo {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 24px;
+    height: 24px;
+  }
+  ```
+
+- 로고 hover
+
+  ```css
+  footer .logo:hover svg {
+    fill: #4078c0;
+  }
+  ```
+
+- underline
+
+  ```css
+  footer .site-links li a:hover {
+    text-decoration: underline;
+  }
+  ```
+
+  
