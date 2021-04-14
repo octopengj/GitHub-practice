@@ -1,4 +1,4 @@
-# GitHub example
+# cGitHub example
 
 
 
@@ -461,4 +461,123 @@ defer: html의 구조가 전부 로드되면 실행
   }
   ```
 
+
+
+### media
+
+- 설정단위
+
+  | 종류           | 디바이스         | 단위(px)    |
+  | -------------- | ---------------- | ----------- |
+  | Large Devices  | Desktops         | 1024px 이상 |
+  | Medium Devices | Tablets          | 1024px 이하 |
+  | Small Devices  | Tablets + Phones | 768px 이하  |
+
+- 초기화
+
+  ```css
+  @media (max-width:1024px) {
+    header.section .inner { /* header .inner이면 명시도값이 낮아서 덮어쓰기가 안됨 section붙여서 높여줌*/
+      max-width: none;
+      height: auto;
+      padding: 0 20px;
+    }
+    header .menu-group,
+    header .sign-group {
+      float: none;
+    }
+  }
+  ```
+
+  max-width, height, float 초기화
+
   
+
+  height값을 지정해버리면 나중에 만들 토글버튼의 높이가 정해져버리기 때문에 컨텐츠만큼 늘어나게 만들기위해
+
+  auto로 지정
+
+- toggle-btn
+
+  ```css
+  #toggle-btn {
+      background: url("../img/toggle-btn.svg");
+      width: 18px;
+      height: 24px;
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      cursor: pointer;
+      text-indent: -9999px;
+    }
+  ```
+
+  height값이 로고만큼 차지하기 때문에 padding으로 공간 만들어줌
+
+  ```css
+  header .logo {
+      padding: 12px 0;
+    }
+  ```
+
+  
+
+  자바스크립트
+
+  
+
+  toggle 이벤트 적용
+
+  ```javascript
+  (function(window, document) {
+      'use strict';
+  
+      const toggles = document.querySelectorAll('.toggle');
+      const toggleBtn = document.getElementById('toggle-btn');
+  
+      toggleBtn.addEventListener('click', function(){
+          toggleElements();
+      });
+  
+      function toggleElements() {
+          [].forEach.call(toggles, function(toggle) {
+              toggle.classList.toggle('on');
+          });
+      }
+  })(window, document);
+  ```
+
+  화면 사이즈가 변경되면(resize) 토클 remove 코드 추가
+
+  ```javascript
+  (function(window, document) {
+      'use strict';
+  
+      const toggles = document.querySelectorAll('.toggle');
+      const toggleBtn = document.getElementById('toggle-btn');
+  
+      toggleBtn.addEventListener('click', function(){
+          toggleElements();
+      });
+  
+      window.addEventListener('resize', function() {
+          if(window.innerWidth > 1024) {
+              offElements();
+          }
+      });
+  
+      function toggleElements() {
+          [].forEach.call(toggles, function(toggle) {
+              toggle.classList.toggle('on');
+          });
+      }
+      function offElements() {
+          [].forEach.call(toggles, function(toggle) {
+              toggle.classList.remove('on');
+          });
+      }
+  })(window, document);
+  ```
+
+  
+
