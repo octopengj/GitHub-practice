@@ -387,7 +387,7 @@
         });
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?        					   key=AIzaSyCTQIlxBn5AfKGvsfJiormAE1esN3fcCkg&callback=iniMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/jskey=AIzaSyCTQIlxBn5AfKGvsfJiormAE1esN3fcCkg&callback=iniMap" async defer></script>
 ```
 
 lat, lng : 위도, 경도
@@ -407,4 +407,22 @@ mapAPI는 개발자등록을해서 구글에서 받아야함
 async: 비동기로 실행
 
 defer: html의 구조가 전부 로드되면 실행
+
+
+
+
+
+### Pricing card
+
+- 배경색
+
+  ```css
+  .section--pricing {
+    background: linear-gradient(#f5f5f5, #fff);
+  }
+  ```
+
+- flex
+
+  flex:1; 로 Sign for GitHub 버튼 영역 잡아줌
 
