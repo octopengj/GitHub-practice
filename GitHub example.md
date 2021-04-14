@@ -593,4 +593,25 @@ defer: html의 구조가 전부 로드되면 실행
     }
   ```
 
-  
+
+
+- small device 
+
+  footer 정렬 
+
+  ```css
+  /* footer */
+  footer .site-links {
+      float: none;
+      display: block;
+      text-align: center;
+  }
+  footer .site-links:first-child {
+      margin-bottom: 20px;
+  }
+  footer .site-links li {
+      display: inline;
+  }
+  ```
+
+  main.css에서 flex처리한 것을 부모(.site-links)에 block으로 수직 정렬시키고 자식(.site-links li)를 inline으로 수평정렬
