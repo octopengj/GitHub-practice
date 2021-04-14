@@ -363,3 +363,48 @@
 
   
 
+### 지도
+
+```html
+ <script>
+      function iniMap() {
+        const myLatLng = {
+          lat: 37.782293,
+          lng: -122.391240
+        }
+        const map = new google.maps.Map(
+          document.getElementById('map'),
+          {
+            center: myLatLng,
+            scrollwheel: false,
+            zoom: 18
+          }
+        );
+        const marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'GitHub'
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?        					   key=AIzaSyCTQIlxBn5AfKGvsfJiormAE1esN3fcCkg&callback=iniMap" async defer></script>
+```
+
+lat, lng : 위도, 경도
+
+center: 지도의 센터
+
+scrollwheel: 지도상에서 휠 방지
+
+zoom: 18까지 허용
+
+marker: 지도상에 포인트
+
+position: 위치
+
+mapAPI는 개발자등록을해서 구글에서 받아야함 
+
+async: 비동기로 실행
+
+defer: html의 구조가 전부 로드되면 실행
+
