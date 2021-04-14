@@ -327,5 +327,39 @@
 
   video영역 안에 iframe 비디오를 삽입
 
+- tiles 정렬
+
+  ```css
+  .section--feature .tiles ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* 4개의 column 1:1:1:1비율 */
+  ```
+
+  구형브라우저의 경우
+
+  ```html
+  <ul class="clerfix">
+  </ul>
+  ```
+
+  html의 부모태그에 clearfix 적용
+
+  ```css
+  .section--feature .tiles li {
+  padding: 34px 24px;
+  text-align: center;
+  line-height: 1.5;
+  border-right: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  float: left;
+  width: 25%
+  }
+  ```
+
+  float: left; width: 25%;로 4개의 컬럼, padding이나 border가 있어서 요소가 커지는 경우가 생기기 때문에 box-sizing: border-box;가 있는지 확인
+
   
 
